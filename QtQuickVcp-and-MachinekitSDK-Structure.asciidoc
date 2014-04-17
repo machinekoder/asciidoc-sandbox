@@ -1,0 +1,21 @@
+QtQuickVcp folder structure
+~~~~~~~~~~~~~~~~
+----
+halremote
+   src
+   generated
+   externals-src
+halremotecontrols
+   qml
+      Machinekit
+         Hal
+            Controls
+controls
+   qml
+      Machinekit
+         Controls
+pathview
+   src
+camview
+   src
+----
