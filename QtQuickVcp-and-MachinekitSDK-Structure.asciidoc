@@ -21,8 +21,7 @@ camview
    generated
 examples
 ----
-Resulting QML imports
-*********************
+.Resulting QML imports
 * *Machinekit.HalRemote* - Non GUI HAL remote pins and components
 * *Machinekit.HalRemote.Controls* - UI items such as Slider and ProgressBar combined with HAL pins
 * *Machinekit.Controls* - Generic UI items not combined with HAL pins (can be used for non HAL projects)
