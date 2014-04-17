@@ -6,6 +6,11 @@ Qt Creator
 ~~~~~~~~~~
 Qt Creator is the preferred IDE for Qt. Like Eclipse it is very modular and extendable but at the same time very resource efficient. As one of the main GUI frameworks for creating Machinekit UIs will be QtQuick it very convenient to have everything in place to create a Machinekit SDK.
 
+Links
++++++
+http://doc.qt.digia.com/qtcreator-extending/
+http://docs.kde.org/stable/de/applications/kate/katehighlight-xml-format.html
+
 qbs - The Qt Build System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 qbs is a new build system created by the Qt developers to replace the currently build system qmake. In comparison to qmake it is not focused on managing only Qt/C++ applications. One of the most important advantages of this build system compared to others is its extend-ability with custom "Modules". This makes it possible to integrate all things necessary for a Machinekit project into the build and deploy process. Furthermore qbs is currently on the way to be integrated into Qt Creator as it will replace qmake some time in the future. Qt Creator 3.1 comes bundled with qbs and supports most of the currently integrated features.
