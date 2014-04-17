@@ -1,0 +1,5 @@
+Qt 5 on the BeagleBone
+--------
+Very interesting page to this topic: http://armsdr.blogspot.co.at/2014/01/bare-metal-qt-52-on-beaglebone-black.html?showComment=1397390274480#c8957453484820769113
+
+Note that QtQuick 2 is only available when OpenGL is compilable on the target platform -> SGX driver needed-
