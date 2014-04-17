@@ -8,7 +8,7 @@ Qt Creator is the preferred IDE for Qt. Like Eclipse it is very modular and exte
 
 Links
 +++++
-http://doc.qt.digia.com/qtcreator-extending/
+http://doc.qt.digia.com/qtcreator-extending/  
 http://docs.kde.org/stable/de/applications/kate/katehighlight-xml-format.html
 
 qbs - The Qt Build System
