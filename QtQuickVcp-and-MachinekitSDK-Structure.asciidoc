@@ -19,6 +19,8 @@ pathview
 videoview
    src
    generated
+applications
+   AppDiscover
 examples
 ----
 .Resulting QML imports
