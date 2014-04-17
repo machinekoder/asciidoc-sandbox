@@ -26,7 +26,7 @@ examples
 * *Machinekit.HalRemote.Controls* - UI items such as Slider and ProgressBar combined with HAL pins
 * *Machinekit.Controls* - Generic UI items not combined with HAL pins (can be used for non HAL projects)
 * *Machinekit.PathView* - GCode path and progress views
-* *Machinekit.VideoView* - Cam views, e.g. for mjpeg-webcam streams
+* *Machinekit.VideoView* - Video views, e.g. for mjpeg-webcam streams
 
   
 Machinekit SDK folder structure
