@@ -1,0 +1,7 @@
+As QtQuick 2 renders all its contents in the so called "SceneGraph" it comes per default with OpenGL under the hood. This makes a OpenGL based preview window for GCode very attractive.
+
+Currently there are only few graphics frameworks available that target QtQuick 2. However, it turned out that implementing currently available OpenGL based application into QtQuick 2 is no problem at all. The http://qt-project.org/doc/qt-5/qtquick-scenegraph-openglunderqml-example.html[OpenGL under QML] demo application demonstrates the necessary steps to embed OpenGL code into QML. 
+
+Reference projects
+~~~~~~~~~~~~~~~~~~
+http://qt-apps.org/content/show.php/QRepRap?content=160728[QRepRap]
