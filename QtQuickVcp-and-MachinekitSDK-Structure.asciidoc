@@ -18,6 +18,8 @@ pathview
    src
 camview
    src
+   generated
+examples
 ----
 Resulting QML imports
 *********************
