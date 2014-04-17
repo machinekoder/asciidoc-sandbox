@@ -29,8 +29,7 @@ Resulting QML imports
 * *Machinekit.PathView* - GCode path and progress views
 * *Machinekit.CamView* - Cam views, e.g. for mjpeg-webcam streams
 
-Machinekit SDK folder structure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Machinekit SDK folder structure
 
 ----
 qbs
