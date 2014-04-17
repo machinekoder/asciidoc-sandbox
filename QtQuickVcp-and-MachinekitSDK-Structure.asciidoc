@@ -28,3 +28,18 @@ Resulting QML imports
 * *Machinekit.Controls* - Generic UI items not combined with HAL pins (can be used for non HAL projects)
 * *Machinekit.PathView* - GCode path and progress views
 * *Machinekit.CamView* - Cam views, e.g. for mjpeg-webcam streams
+
+Machinekit SDK folder structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----
+qbs
+   imports
+   modules
+qtcreator
+   syntax
+   templates
+   wizards
+   doc
+tools
+   BBIOConfig
+----
