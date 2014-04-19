@@ -2,6 +2,7 @@ QtQuickVcp folder structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ----
 3rdparty
+   nzmqt
 applications
    AppDiscover
 doc
