@@ -1,27 +1,19 @@
 QtQuickVcp folder structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ----
-halremote
-   src
-   generated
-   externals-src
-halremotecontrols
-   qml
-      Machinekit
-         Hal
-            Controls
-controls
-   qml
-      Machinekit
-         Controls
-pathview
-   src
-videoview
-   src
-   generated
+3rdparty
 applications
    AppDiscover
+doc
 examples
+src
+   halremote
+      generated
+   halremotecontrols
+   controls
+   pathview
+   videoview
+      generated
 ----
 .Resulting QML imports
 * *Machinekit.HalRemote* - Non GUI HAL remote pins and components
