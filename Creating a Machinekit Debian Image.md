@@ -1,5 +1,5 @@
 ### step 1: Download BBB Debian image
-Download latest image from http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#debian_releases
+Download latest image from http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Debian_Releases
 and check the md5 sum
 
 ### step 2: extract image files
