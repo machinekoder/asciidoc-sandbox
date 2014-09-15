@@ -80,7 +80,7 @@ we have to install the AP-Hotspot script:
 	git clone https://github.com/strahlex/AP-Hotspot.git
 	cd AP-Hotspot/
 	sudo apt-get update
-        sudo apt-get install libnotify-bin iw dnsmasq
+	sudo apt-get install libnotify-bin iw dnsmasq
 	sudo make install
 
 ### step 11: Additional modifications
