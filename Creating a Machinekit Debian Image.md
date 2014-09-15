@@ -23,13 +23,14 @@ Use you favorite terminal application to connect to the BBB:
 To make Machinekit work properly we need a new user:
 
 	adduser machinekit
-	usermod -aG  sudo,xenomai.kmem machinekit
+	usermod -aG  sudo,xenomai,kmem machinekit
 
 Remove the sudo password by adding a new entry to sudoers.d:
 
 	sudo su -c 'echo -e "# No sudo password for machinekit user\nmachinekit ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/90-machinekit'
 
 Now change the root user password to improve security:
+
 	passwd
 
 ### step 6: change the hostname
