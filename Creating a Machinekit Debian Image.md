@@ -34,14 +34,16 @@ Now change the root user password to improve security:
 	passwd
 
 ### step 6: change the hostname
-You may want to change the hostname of the image. Change beaglebone 
+You may want to change the hostname of the image. Change *beaglebone* 
 in the following two files with the name you want.
+
 	nano /etc/hostname
 	nano /etc/hosts
 
 Reboot to apply the changes.
 
 ### step 7: logout and login as new user
+
 	exit
 	ssh machinekit@beaglebone.local
 
@@ -66,6 +68,7 @@ uEnv.txt:
 ### step 9: change SSH banner message
 The default banner message on the BBB image is located at 
 /etc/issue.net you can edit by running:
+
 	sudo nano /etc/issue.net
 
 ### step 10: install AP-Hotspot
