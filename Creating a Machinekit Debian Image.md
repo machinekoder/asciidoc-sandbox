@@ -49,8 +49,7 @@ Reboot to apply the changes.
 
 ### step 7: install Machinekit
 Now we need to install the Machinekit packages:
-see http://www.machinekit.io/docs/packages-debian/
-additional steps:
+see http://www.machinekit.io/docs/packages-debian/ for additional steps:
 
 	sudo apt-get install linux-image-xenomai
 
@@ -62,12 +61,13 @@ can check the loaded capes with:
 	cat /sys/devices/bone_capemgr.*/slots
 
 To deactive loading of specific cape at boot you need to edit the 
-uEnv.txt:
+´uEnv.txt´:
 
 	sudo nano /boot/uEnv.txt
+
 ### step 9: change SSH banner message
 The default banner message on the BBB image is located at 
-/etc/issue.net you can edit by running:
+´/etc/issue.net´ you can edit by running:
 
 	sudo nano /etc/issue.net
 
@@ -84,10 +84,11 @@ we have to install the AP-Hotspot script:
 	sudo make install
 
 ### step 11: Additional modifications
-We may need a folder in the home directory of the machinekit user for 
+We may need a folder in the home directory of the *machinekit* user for 
 gcode files:
+
 	mkdir ~/nc_files
 
-It is possible to rename the FAT32 partition that is mounted when the 
+It is possible to rename the *FAT32* partition that is mounted when the 
 BBB is connected to a computer using USB. This may be done with any 
 suitable application.
