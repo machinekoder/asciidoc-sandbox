@@ -75,7 +75,7 @@ The default banner message on the BBB image is located at
 To make it possible to connect the BBB using the a AP Wifi network 
 we have to install the AP-Hotspot script:
 
-	mdkir bin
+	mkdir bin
 	cd bin
 	git clone https://github.com/strahlex/AP-Hotspot.git
 	cd AP-Hotspot/
