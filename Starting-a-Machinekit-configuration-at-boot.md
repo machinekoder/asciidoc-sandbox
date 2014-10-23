@@ -1,6 +1,7 @@
 # Starting a Machinekit configuration at boot
 With Systemd it is pretty easy to start a Machinekit configuration right after boot. The configuration in this tutorial is called _example_, you may replace all appearances to match with the name of your Machinekit configuration. The example configuration in this tutorial is started using the python launcher library.
 
+### Service configuration
 First we need to create a new Systemd service:
 
         sudo nano /lib/systemd/example.service
@@ -23,10 +24,12 @@ With the following content:
 
 **User:** Insert the user configured to start Machinekit configurations.
 
+### Symlink
 Now we need to create a symlink:
 
         sudo ln /lib/systemd/example.service /etc/systemd/system/example.service
 
+### Starting the service
 The Systemd service is now ready to be configured:
 
         sudo systemctl daemon-reload
@@ -38,3 +41,20 @@ Wait a few seconds and check the status of the service:
 After you have that everything works fine its time to enable the service to be started at boot:
 
         sudo systemctl enable example.service
+
+### Reboot
+Now it is time to reboot the system to test configuration:
+
+        sudo reboot
+
+Take a cup of coffee and cross your fingers...
+
+### Also Useful
+
+If you want to disable service again:
+
+        sudo systemctl disable example.service
+
+Stopping the service:
+
+        sudo systemctl stop example.service
