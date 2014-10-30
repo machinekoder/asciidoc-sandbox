@@ -25,7 +25,6 @@ Use you favorite terminal application to connect to the BBB:
 To make Machinekit work properly we need a new user:
 
 	adduser machinekit
-	groupadd xenomai
 	usermod -aG  sudo,xenomai,kmem machinekit
 
 Remove the sudo password by adding a new entry to sudoers.d:
