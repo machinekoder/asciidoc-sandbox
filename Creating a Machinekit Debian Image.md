@@ -44,9 +44,10 @@ in the following two files with the name you want.
 
 Reboot to apply the changes.
 
+	reboot
+
 ### step 7: logout and login as new user
 
-	exit
 	ssh machinekit@beaglebone.local
 
 ### step 7: install Machinekit
