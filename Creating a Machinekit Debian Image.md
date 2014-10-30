@@ -12,8 +12,10 @@ e.g.
 
 	sudo dd bs=4m if=bone-debian-7.6-lxde-armhf-2014-08-05-4gb.img of=/dev/mmcblk0
 
-Note: you may need to flash a new bootloader using the eMMC-flasher 
+**Note:** you may need to flash a new bootloader using the eMMC-flasher 
 images
+
+**Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
