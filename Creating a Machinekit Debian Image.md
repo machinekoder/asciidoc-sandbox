@@ -50,9 +50,9 @@ Reboot to apply the changes.
 
 ### step 7: install Machinekit
 Now we need to install the Machinekit packages:
-see http://www.machinekit.io/docs/packages-debian/ for additional steps:
+Follow the BeagleBone steps at [Machinekit Debian Packages](http://www.machinekit.io/docs/packages-debian/). make sure to install the correct Linux kernel image:
 
-	sudo apt-get install linux-image-xenomai
+	sudo apt-get install linux-image-xenomai.beaglebone-omap
 
 ### step 8: deactivate all unneeded capes
 We should check all the capes that are loaded by default (can change 
