@@ -10,7 +10,7 @@ Use dmesg to check for the name of the SD card partition then flash
 the image file:
 e.g.
 
-	sudo dd bs=4M if=bone-debian-7.6-lxde-armhf-2014-08-05-4gb.img of=/dev/mmcblk0
+	sudo dd bs=4m if=bone-debian-7.6-lxde-armhf-2014-08-05-4gb.img of=/dev/mmcblk0
 
 Note: you may need to flash a new bootloader using the eMMC-flasher 
 images
