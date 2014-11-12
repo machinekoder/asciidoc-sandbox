@@ -88,6 +88,7 @@ we have to install the AP-Hotspot script:
 	sudo make install
 
 I tested it with the *EDIMAX EW-7811UN Wireless USB Adapter* which works out of the box on the BBB.
+**Note:** For some reason the EDIMAX dongle works only with a Nexus 7 as client
 
 ### step 11: Additional modifications
 We may need a folder in the home directory of the *machinekit* user for 
