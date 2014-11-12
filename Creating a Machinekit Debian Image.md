@@ -19,7 +19,8 @@ images
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
-	ssh root@beaglebone.local
+	
+        ssh root@beaglebone.local
 
 ### step 5: add a new user
 To make Machinekit work properly we need a new user:
