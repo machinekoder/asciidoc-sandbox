@@ -13,3 +13,13 @@ Edit
     [SeatDefaults]
     #autologin-user=
     #autologin-user-timeout=0
+
+## Step 4: Install tilda
+    sudo apt-get install tilda
+    mkdir -p ~/.config/autostart/
+    nano ~/.config/autostart/tilda.desktop
+With following contents:
+
+    [Desktop Entry]
+    Type=Application
+    Exec=tilda
