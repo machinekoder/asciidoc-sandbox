@@ -9,6 +9,7 @@ See http://www.binarytides.com/virtualbox-guest-additions-debian-wheezy/
 ## Step 3: Enable autologin
     sudo nano /etc/lightdm/lightdm.conf
 Edit
+
     [SeatDefaults]
     #autologin-user=
     #autologin-user-timeout=0
