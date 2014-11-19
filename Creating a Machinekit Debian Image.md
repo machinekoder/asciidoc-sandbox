@@ -8,9 +8,15 @@ and check the md5 sum
 ### step 2+3: flash image file to SD card
 Use dmesg to check for the name of the SD card partition then flash 
 the image file:
-e.g.
+
+For 2GB images:
 
     xz -dc <name of image>.img.xz | pv -s 1800000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
+
+
+For 4GB images:
+
+    xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
 
 **Note:** you may need to flash a new bootloader using the eMMC-flasher 
 images
