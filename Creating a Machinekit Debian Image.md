@@ -2,7 +2,10 @@
 Download latest image from http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Debian_Releases
 and check the md5 sum
 
-### step 2: extract image files
+    wget <url>
+    md5sum <name of image>.xz
+
+### step 2: extract and flash image files
 	unxz <compressed image file>
 
 ### step 3: flash image file to SD card
@@ -10,7 +13,7 @@ Use dmesg to check for the name of the SD card partition then flash
 the image file:
 e.g.
 
-	sudo dd bs=4096 if=bone-debian-7.6-lxde-armhf-2014-08-05-4gb.img of=/dev/mmcblk0
+    pv <uncompressed image file> | sudo dd bs=4096 of=/dev/mmcblk0
 
 **Note:** you may need to flash a new bootloader using the eMMC-flasher 
 images
