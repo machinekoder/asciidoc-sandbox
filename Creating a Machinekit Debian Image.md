@@ -13,7 +13,7 @@ Use dmesg to check for the name of the SD card partition then flash
 the image file:
 e.g.
 
-    pv <uncompressed image file> | sudo dd bs=4096 of=/dev/mmcblk0
+    pv <uncompressed image file> | sudo dd bs=4096 of=/dev/mmcblk0 oflag=direct
 
 **Note:** you may need to flash a new bootloader using the eMMC-flasher 
 images
