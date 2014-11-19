@@ -3,22 +3,31 @@ Download latest image from http://elinux.org/Beagleboard:BeagleBoneBlack_Debian#
 and check the md5 sum
 
     wget <url>
-    md5sum <name of image>.xz
+    md5sum <name of image>.img.xz
 
 ### step 2: extract image file
-	unxz <compressed image file>
 
-### step 3: flash image file to SD card
+
+### step 2+3: flash image file to SD card
 Use dmesg to check for the name of the SD card partition then flash 
 the image file:
 e.g.
 
-    pv <uncompressed image file> | sudo dd bs=4096 of=/dev/mmcblk0 oflag=direct
+    xz -dc <name of image>.img.xz | pv -s 1800000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
 
 **Note:** you may need to flash a new bootloader using the eMMC-flasher 
 images
 
 **Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
+
+#### Alternative without progress bar
+Extract the image file
+
+    unxz <name of image>.img.xz
+
+Flash the image
+
+    sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
