@@ -5,7 +5,7 @@ and check the md5 sum
     wget <url>
     md5sum <name of image>.xz
 
-### step 2: extract and flash image files
+### step 2: extract image file
 	unxz <compressed image file>
 
 ### step 3: flash image file to SD card
