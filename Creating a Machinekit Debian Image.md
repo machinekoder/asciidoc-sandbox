@@ -5,9 +5,6 @@ and check the md5 sum
     wget <url>
     md5sum <name of image>.img.xz
 
-### step 2: extract image file
-
-
 ### step 2+3: flash image file to SD card
 Use dmesg to check for the name of the SD card partition then flash 
 the image file:
