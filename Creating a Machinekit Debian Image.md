@@ -9,7 +9,7 @@ and check the md5 sum
 **WARNING: Be careful when typing these commands**
 
 Use **dmesg** to check for the name of the SD card partition then flash 
-the image file. Flashing to the wrong device could result in data loss.  
+the image file. Flashing to the wrong device can result in data loss.  
 
 For 2GB images:
 
