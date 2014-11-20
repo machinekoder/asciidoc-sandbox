@@ -42,12 +42,16 @@ For 4GB images:
 ### step 3: insert SD card and boot
 Insert the SD card into your BBB and wait for the device to boot. The lights will be indication what your device is doing. No light mean something went wrong (or your device is not powered). Randomly blinking lights mean your device is doing something (good sign). Running lights mean the SD card content is being flashed to eMMC.
 
+If you want to connect to your BBB over Ethernet make sure you connect it to a DHCP server before booting.
+
 **Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
 	
         ssh root@beaglebone.local
+
+**Note:** On Windows or Mac you may need to enter the IP address of the BBB instead of the hostname `beaglebone.local`. If you are connected over USB this is `192.168.7.2`
 
 ### step 5: add a new user
 To make Machinekit work properly we need a new user:
