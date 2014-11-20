@@ -25,6 +25,10 @@ Flash the image
 
     sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
 
+**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
+
+**Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
+
 #### Alternative with progress bar
 For the following commands you need the tool `pv` installed. On Debian or Ubuntu this can be done with `sudo apt-get install pv`
 
@@ -36,13 +40,6 @@ For 2GB images:
 For 4GB images:
 
     xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
-
-**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
-
-**Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
-
-
-
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
