@@ -6,7 +6,8 @@ and check the md5 sum
     md5sum <name of image>.img.xz
 
 ### step 2+3: flash image file to SD card
-Use dmesg to check for the name of the SD card partition then flash 
+**WARNING: Be careful when typing these commands**
+Use **dmesg** to check for the name of the SD card partition then flash 
 the image file:
 
 For 2GB images:
