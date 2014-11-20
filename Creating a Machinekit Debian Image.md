@@ -20,8 +20,7 @@ For 4GB images:
 
     xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
 
-**Note:** you may need to flash a new bootloader using the eMMC-flasher 
-images
+**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
 
 **Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
