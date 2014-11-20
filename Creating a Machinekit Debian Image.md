@@ -7,8 +7,9 @@ and check the md5 sum
 
 ### step 2+3: flash image file to SD card
 **WARNING: Be careful when typing these commands**
+
 Use **dmesg** to check for the name of the SD card partition then flash 
-the image file:
+the image file. Flashing to the wrong device could result in data loss.  
 
 For 2GB images:
 
