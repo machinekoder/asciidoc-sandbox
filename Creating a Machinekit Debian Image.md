@@ -25,7 +25,7 @@ Flash the image
 
     sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
 
-**Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
+**NOTE:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
 #### Alternative with progress bar
 For the following commands you need the tool `pv` installed. On Debian or Ubuntu this can be done with `sudo apt-get install pv`
@@ -44,14 +44,14 @@ Insert the SD card into your BBB and wait for the device to boot. The lights wil
 
 If you want to connect to your BBB over **Ethernet** make sure you connect it to a DHCP server **before booting**.
 
-**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
+**NOTE:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
 	
         ssh root@beaglebone.local
 
-**Note:** On **Windows or Mac** you may need to enter the IP address of the BBB instead of the hostname `beaglebone.local`. If you are connected over USB this is `192.168.7.2`
+**NOTE:** On **Windows or Mac** you may need to enter the IP address of the BBB instead of the hostname `beaglebone.local`. If you are connected over USB this is `192.168.7.2`
 
 ### step 5: add a new user
 To make Machinekit work properly we need a new user:
@@ -119,7 +119,7 @@ we have to install the AP-Hotspot script:
 	sudo make install
 
 I tested it with the *EDIMAX EW-7811UN Wireless USB Adapter* which works out of the box on the BBB.
-**Note:** For some reason the EDIMAX dongle works only with a Nexus 7 as client
+**NOTE:** For some reason the EDIMAX dongle works only with a Nexus 7 as client
 
 ### step 11: Additional modifications
 We may need a folder in the home directory of the *machinekit* user for 
