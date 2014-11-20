@@ -9,7 +9,24 @@ and check the md5 sum
 **WARNING: Be careful when typing these commands**
 
 Use **dmesg** to check for the name of the SD card partition then flash 
-the image file. Flashing to the wrong device can result in data loss.  
+the image file. Flashing to the wrong device can result in data loss.
+
+Reconnect your SD card reader with the SD card insert and type the following:
+
+    dmesg | tail
+
+You should see something mentioning `/dev/sdX` or `/dev/mmcblkX`. This is the name of your SD card device.
+
+Extract the image file
+
+    unxz <name of image>.img.xz
+
+Flash the image
+
+    sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
+
+#### Alternative with progress bar
+For the following commands you need the tool `pv` installed. On Debian or Ubuntu this can be done with `sudo apt-get install pv`
 
 For 2GB images:
 
@@ -24,14 +41,8 @@ For 4GB images:
 
 **Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
-#### Alternative without progress bar
-Extract the image file
 
-    unxz <name of image>.img.xz
 
-Flash the image
-
-    sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
