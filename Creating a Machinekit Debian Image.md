@@ -68,8 +68,8 @@ Now change the root user password to improve security:
 	passwd
 
 ### step 6: change the hostname
-You may want to change the hostname of the image. Change *beaglebone* 
-in the following two files with the name you want.
+You may want to change the hostname of the image. Change `beaglebone` 
+in the following two files with the name you want using the [nano](http://www.nano-editor.org/) editor.
 
 	nano /etc/hostname
 	nano /etc/hosts
