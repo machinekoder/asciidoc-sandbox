@@ -5,7 +5,7 @@ and check the md5 sum
     wget <url>
     md5sum <name of image>.img.xz
 
-### step 2+3: flash image file to SD card
+### step 2: flash image file to SD card
 **WARNING: Be careful when typing these commands**
 
 Use **dmesg** to check for the name of the SD card partition then flash 
@@ -25,8 +25,6 @@ Flash the image
 
     sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
 
-**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
-
 **Note:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
 #### Alternative with progress bar
@@ -40,6 +38,11 @@ For 2GB images:
 For 4GB images:
 
     xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
+
+### step 3: insert SD card and boot
+Insert the SD card into your BBB and wait for the device to boot. The lights will be indication what your device is doing. No light mean something went wrong (or your device is not powered). Randomly blinking lights mean your device is doing something (good sign). Running lights mean the SD card content is being flashed to eMMC.
+
+**Note:** If the image is not booting you may need to flash a new bootloader using the console eMMC-flasher images. (usually happens with older RevB boards)
 
 ### step 4: connect to the BBB using SSH
 Use you favorite terminal application to connect to the BBB:
