@@ -11,7 +11,7 @@ and check the md5 sum
 Use **dmesg** to check for the name of the SD card partition then flash 
 the image file. Flashing to the wrong device can result in data loss.
 
-Reconnect your SD card reader with the SD card insert and type the following:
+Reconnect your SD card reader with the SD card inserted and type the following:
 
     dmesg | tail
 
