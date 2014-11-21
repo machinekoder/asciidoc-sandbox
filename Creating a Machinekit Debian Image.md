@@ -83,8 +83,8 @@ Reboot to apply the changes.
 	ssh machinekit@beaglebone.local
 
 ### step 7: install Machinekit
-Now we need to install the Machinekit packages:
-Follow the BeagleBone steps at [Machinekit Debian Packages](http://www.machinekit.io/docs/packages-debian/). make sure to install the correct Linux kernel image:
+Now we need to install the Machinekit packages.
+Follow the BeagleBone steps at [Machinekit Debian Packages](http://www.machinekit.io/docs/packages-debian/). Make sure to install the correct Linux kernel image:
 
 	sudo apt-get install linux-image-xenomai.beaglebone-omap
 
