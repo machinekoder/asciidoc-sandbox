@@ -130,3 +130,5 @@ gcode files:
 It is possible to rename the *FAT32* partition that is mounted when the 
 BBB is connected to a computer using USB. This may be done with any 
 suitable application.
+
+Starting the a Machinekit configuration at boot is also possible [Starting-a-Machinekit-configuration-at-boot](https://github.com/strahlex/asciidoc-sandbox/wiki/Starting-a-Machinekit-configuration-at-boot)
