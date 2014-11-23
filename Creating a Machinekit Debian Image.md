@@ -104,6 +104,10 @@ To deactive loading of specific cape at boot you need to edit the
 
 	sudo nano /boot/uEnv.txt
 
+For many Machinekit configurations you will need to disable the HDMI cape. This can be done by uncommenting the following command:
+
+    cape_disable=capemgr.disable_partno=BB-BONELT-HDMI
+
 ### step 9: change SSH banner message
 The default banner message on the BBB image is located at 
 ´/etc/issue.net´ you can edit by running:
