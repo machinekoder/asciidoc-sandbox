@@ -40,7 +40,11 @@ For 4GB images:
     xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
 
 ### step 3: insert SD card and boot
-Insert the SD card into your BBB and wait for the device to boot. The lights will be indication what your device is doing. **No light** means something went wrong (or your device is not powered). **Randomly blinking lights** mean your device is doing something (good sign). **Running lights** mean the SD card content is being flashed to eMMC. **Four flashing lights** mean that you tried flashing a 4GB image to a BBB older than RevC.
+Insert the SD card into your BBB and wait for the device to boot. The lights will be indication what your device is doing. 
+* **No lights** means something went wrong (or your device is not powered). 
+* **Randomly blinking lights** mean your device is doing something (good sign). 
+* **Running lights** mean the SD card content is being flashed to eMMC. 
+* **Four flashing lights** mean that you tried flashing a 4GB image to a BBB older than RevC.
 
 If you want to connect to your BBB over **Ethernet** make sure you connect it to a DHCP server **before booting**.
 
