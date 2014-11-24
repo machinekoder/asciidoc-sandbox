@@ -37,6 +37,7 @@ The Systemd service is now ready to be configured:
         sudo systemctl start example.service
 
 Wait a few seconds and check the status of the service:
+
         sudo systemctl status example.service
 
 After you have that everything works fine its time to enable the service to be started at boot:
