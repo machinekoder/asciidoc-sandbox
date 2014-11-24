@@ -9,7 +9,7 @@ First we need to create a new Systemd service:
 With the following content:
 
         [Unit]
-        Description=Starts the UNIPRINT-3D machinekit configuration
+        Description=Starts my Uber-awesome Machinekit configuration
         After=syslog.target network.target ap-hotspot.service
         [Service]
         Type=simple
