@@ -1,6 +1,7 @@
 # Starting a Machinekit configuration at boot
 With Systemd it is pretty easy to start a Machinekit configuration right after boot. The configuration in this tutorial is called _example_, you may replace all appearances to match with the name of your Machinekit configuration. The example configuration in this tutorial is started using the python launcher library.
 
+On **Debian Wheezy** you need to update systemd from the backports. See the instructions for [AP-Hotspot](https://github.com/strahlex/AP-Hotspot#install) for details.
 ### Service configuration
 First we need to create a new Systemd service:
 
