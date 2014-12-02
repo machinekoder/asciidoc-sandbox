@@ -23,7 +23,7 @@ Extract the image file
 
 Flash the image
 
-    sudo dd bs=4096 if=<name of image>.img of=/dev/<device> oflag=direct
+    sudo dd bs=4096k if=<name of image>.img of=/dev/<device> oflag=direct
 
 **NOTE:** if you use the SD card image you may want to **resize** it to use the whole SD card. You can use [GParted](http://gparted.org/) for this purpose.
 
@@ -32,12 +32,12 @@ For the following commands you need the tool `pv` installed. On Debian or Ubuntu
 
 For 2GB images:
 
-    xz -dc <name of image>.img.xz | pv -s 1800000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
+    xz -dc <name of image>.img.xz | pv -s 1800000000 | sudo dd bs=4096k iflag=fullblock of=/dev/<device> oflag=direct
 
 
 For 4GB images:
 
-    xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096 of=/dev/<device> oflag=direct
+    xz -dc <name of image>.img.xz | pv -s 3880000000 | sudo dd bs=4096k iflag=fullblock of=/dev/<device> oflag=direct
 
 ### step 3: insert SD card and boot
 Insert the SD card into your BBB and wait for the device to boot. The lights will be indication what your device is doing. 
