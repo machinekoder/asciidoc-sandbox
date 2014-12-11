@@ -40,7 +40,7 @@ Wait a few seconds and check the status of the service:
 
         sudo systemctl status example.service
 
-After you have that everything works fine its time to enable the service to be started at boot:
+After you have approved that everything works fine its time to enable the service to be started at boot:
 
         sudo systemctl enable example.service
 
