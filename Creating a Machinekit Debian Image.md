@@ -126,8 +126,8 @@ we have to install the AP-Hotspot script:
 	sudo apt-get install libnotify-bin iw dnsmasq
 	sudo make install
 
-I tested it with the *EDIMAX EW-7811UN Wireless USB Adapter* which works out of the box on the BBB.
-**NOTE:** For some reason the EDIMAX dongle works only with a Nexus 7 as client
+I can recommend the WiPi Wifi USB dongle from element14 or any other USB wifi adapter with the same chipset.
+**NOTE:** For some reason the *EDIMAX EW-7811UN Wireless USB Adapter* dongle works only with a Nexus 7 as client
 
 ### step 11: Additional modifications
 We may need a folder in the home directory of the *machinekit* user for 
