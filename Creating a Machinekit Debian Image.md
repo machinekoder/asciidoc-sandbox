@@ -114,7 +114,18 @@ The default banner message on the BBB image is located at
 
 	sudo nano /etc/issue.net
 
-### step 10: install AP-Hotspot
+### step 10: WiFi
+If you want to use you BBB in combination with a WiFi network please follow these steps.
+
+#### Infrastructure: wicd-curses
+wicd-curses is ncurses based graphical terminal user interface to connect to (wireless) networks. You can install it by running following commands:
+
+       sudo apt-get update
+       sudo apt-get install wicd-curses
+
+To configure your wireless network run `wicd-curses` and follow the on screen instructions.
+
+#### Access-Point: Install AP-Hotspot
 To make it possible to connect the BBB using the a AP Wifi network 
 we have to install the AP-Hotspot script:
 
@@ -126,7 +137,7 @@ we have to install the AP-Hotspot script:
 	sudo apt-get install libnotify-bin iw dnsmasq
 	sudo make install
 
-I can recommend the WiPi Wifi USB dongle from element14 or any other USB wifi adapter with the same chipset.
+I can recommend the WiPi USB dongle from element14 or any other USB wifi adapter with the same chipset.
 **NOTE:** For some reason the *EDIMAX EW-7811UN Wireless USB Adapter* dongle works only with a Nexus 7 as client
 
 ### step 11: Additional modifications
