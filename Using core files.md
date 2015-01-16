@@ -8,3 +8,7 @@ First you have to figure out which application caused the core dump. Usually the
 
      strings <corefilename> | tail -n 1
 
+Now you need to use gdb to read the core file
+
+     gdb <executable> <corefilename>
+
