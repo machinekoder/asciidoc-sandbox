@@ -119,7 +119,7 @@ The SSH DNS reverse checking feature makes the SSH login slower. As we use the B
 
         sudo su -c 'echo -e "UseDNS no" >> /etc/ssh/sshd_config'
 
-### step 10: WiFi
+### step 11: WiFi
 If you want to use you BBB in combination with a WiFi network please follow these steps.
 
 #### Infrastructure: wicd-curses
@@ -145,7 +145,7 @@ we have to install the AP-Hotspot script:
 I can recommend the WiPi USB dongle from element14 or any other USB wifi adapter with the same chipset.
 **NOTE:** For some reason the *EDIMAX EW-7811UN Wireless USB Adapter* dongle works only with a Nexus 7 as client
 
-### step 11: Additional modifications
+### step 12: Additional modifications
 We may need a folder in the home directory of the *machinekit* user for 
 gcode files:
 
