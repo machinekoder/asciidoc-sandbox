@@ -114,6 +114,11 @@ The default banner message on the BBB image is located at
 
 	sudo nano /etc/issue.net
 
+### step 10: disable SSH DNS reverse checking
+The SSH DNS reverse checking feature makes the SSH login slower. As we use the BBB in an internal network only we can deactivate the reverse checking and speed things up.
+
+        sudo su -c 'echo -e "UseDNS no" >> /etc/ssh/sshd_config'
+
 ### step 10: WiFi
 If you want to use you BBB in combination with a WiFi network please follow these steps.
 
