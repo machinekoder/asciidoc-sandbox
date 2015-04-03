@@ -23,3 +23,9 @@ With following contents:
     [Desktop Entry]
     Type=Application
     Exec=tilda
+## Step 5: Keyboard Layout switching
+Add your keyboard layouts to the file `/etc/default/keyboard`. Then run
+
+    udevadm trigger --subsystem-match=input --action=change
+
+After that you can add the LXDE "Keyboard Layout Switcher" applet the LXDE panel.
