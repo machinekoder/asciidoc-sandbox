@@ -53,7 +53,7 @@ Take a cup of coffee and cross your fingers...
 
 ### Also Useful
 
-If you want to disable service again:
+If you want to disable the service again:
 
         sudo systemctl disable example.service
 
