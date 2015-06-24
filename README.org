@@ -1,0 +1,9 @@
+* Strahlex's Docs and Notes Sandbox
+  It may be a bit confusing that this repository is called =asciidoc-sandbox=
+  as it also contains Markdown and Org files. However, it all started with
+  Asciidoc.
+
+  In this repository you can find documentation mock-ups and notes to things
+  around BeagleBone Black, Machinekit and many more. Please understand that
+  the repository does not follow any hierarchical pattern or any other sort of
+  order. If you find any errors feel free to create a PR or to create a issue.
