@@ -16,6 +16,7 @@ With the following content:
         Type=simple
         ExecStart=/usr/bin/python /home/machinekit/projects/Example/run.py
         User=machinekit
+        LimitMEMLOCK=33554432
         [Install]
         WantedBy=multi-user.target
 
@@ -24,6 +25,8 @@ With the following content:
 **ExecStart:** The _ExecStart_ parameter is configured to start a python run script. You may alter this line for your configuration.
 
 **User:** Insert the user configured to start Machinekit configurations.
+
+**LimitMEMLOCK:** Prevents 'Cannot allocate memory' errors from happening.
 
 ### Symlink
 Now we need to create a symlink:
