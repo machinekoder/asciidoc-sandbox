@@ -5,7 +5,7 @@ On **Debian Wheezy** you need to update systemd from the backports. See the inst
 ### Service configuration
 First we need to create a new Systemd service:
 
-        sudo nano /lib/systemd/example.service
+        sudo nano /etc/systemd/system/
 
 With the following content:
 
