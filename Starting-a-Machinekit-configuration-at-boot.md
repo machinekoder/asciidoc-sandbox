@@ -5,7 +5,7 @@ On **Debian Wheezy** you need to update systemd from the backports. See the inst
 ### Service configuration
 First we need to create a new Systemd service:
 
-        sudo nano /etc/systemd/system/
+        sudo nano /etc/systemd/system/example.service
 
 With the following content:
 
@@ -27,11 +27,6 @@ With the following content:
 **User:** Insert the user configured to start Machinekit configurations.
 
 **LimitMEMLOCK:** Prevents 'Cannot allocate memory' errors from happening.
-
-### Symlink
-Now we need to create a symlink:
-
-        sudo ln /lib/systemd/example.service /etc/systemd/system/example.service
 
 ### Starting the service
 The Systemd service is now ready to be configured:
