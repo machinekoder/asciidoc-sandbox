@@ -1,0 +1,138 @@
+* Deploying Slic3r
+** Download and Install Perl
+*** Linux
+    [[http://www.citrusperl.com/download.html][Citrus Perl]]
+**** Extract Citrus Perl
+     to ~/bin/
+**** run relocateperl
+**** Update Citrus Perl using citrusutils
+     =open ./Citrus*.app= on Mac
+     Windows: install mingw to C:\dev, update Wx to 2.9.4
+**** source citrusvars.sh
+     [[http://stackoverflow.com/questions/17696722/how-can-you-source-an-environment-inside-a-buildbot-step][Usage in Buildbot]]
+     Add it to .bashrc
+*** Windows
+    On Windows use [[http://strawberryperl.com/][Strawberry Perl]] Version 5.16
+*** Mac
+**** Install Perl using perlbrew
+     Use perlbrew to install a 32bit Perl
+     http://www.perlmonks.org/bare/?node_id=910271
+#+BEGIN_EXAMPLE
+perlbrew install -j 5 perl-5.16.3 -Dusethreads -Duseshrplib -Dcc="gcc -m32" -Uloclibpth -Dlibpth=/usr/lib -Accflags="-arch i386 -g -pipe -fno-common -DPERL_DARWIN -fno-strict-aliasing -I/usr/local/include" -Aldflags="-arch i386 -L/usr/local/lib" -Alddlflags="-arch i386 -bundle -undefined dynamic_lookup -L/usr/local/lib" -d
+perlbrew switch perl-5.16.3
+#+END_EXAMPLE
+     Add perlbrew switch to .bashrc
+**** Build Wx
+Get the code from
+http://search.cpan.org/~mdootson/Alien-wxWidgets-0.67/lib/Alien/wxWidgets.pm
+extract it and build and install with following flags
+#+BEGIN_EXAMPLE
+export ARCHFLAGS='-arch i386'
+export LDFLAGS='-arch i386'
+export LDDFLAGS='-arch i386'
+export CFLAGS='-arch i386'
+export CPPFLAGS='-arch i386'
+
+perl Build.PL \
+ --wxWidgets-version=3.0.2 \
+ --wxWidgets-source=tar.bz2 \
+ --wxWidgets-build=1 \
+ --wxWidgets-build-opengl=1 \
+ --wxWidgets-extraflags=" CFLAGS='-arch i386' CXXFLAGS='-arch i386' \
+                          CPPFLAGS='-arch i386' LDFLAGS='-arch i386' \
+                          OBJCFLAGS='-arch i386' OBJCXXFLAGS='-arch i386' \
+                          --with-macosx-sdk=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk \
+                          --with-macosx-version-min=10.6 \
+                          --with-osx_cocoa "
+perl Build
+perl Build test
+perl Build install
+cpan Wx
+#+END_EXAMPLE
+**** Fix dNOOP
+#+BEGIN_EXAMPLE
+emacs /Users/buildbot/perl5/perlbrew/perls/perl-5.16.3/lib/5.16.3/darwin-thread-multi-2level/CORE/perl.h
+
+# find dNOOP and replace the fragment
+
+#ifdef __cplusplus
+#define dNOOP (void)0
+#else
+#define dNOOP extern int Perl___notused(void)
+#endif
+#+END_EXAMPLE
+
+** Install cpanminus
+   =cpan App:cpanminus=
+** Install OpenGL dependcies
+   =sudo apt-get install freeglut3=
+*** Windows
+    Rename freeglut.dll to glut.dll and copy it to perl/bin/
+    http://www.transmissionzero.co.uk/software/freeglut-devel/
+** Clone Slic3r git repository
+   https://github.com/strahlex/Slic3r.git
+** Build Slic3r
+#+BEGIN_EXAMPLE
+perl BUILD.pl
+perl BUILD.pl --gui
+#+END_EXAMPLE
+Windows: force install IO::Scalar
+** Install Cava packager
+   to ~/bin/
+   [[http://www.cavapackager.com/][Cava Packager]]
+*** Mac
+    To Applications
+** Modify resource path
+   In =lib/Slic3r.pm= modify the the line containing =our $var= to something like this
+#+BEGIN_EXAMPLE
+   our $var = decode_path($FindBin::Bin . "/../res";
+#+END_EXAMPLE
+   Use sed or fart to do this:
+*** Linux
+#+BEGIN_EXAMPLE
+   sed -i 's/"\/var";"\/\.\.\/res";/' lib/Slic3r.pm
+#+END_EXAMPLE
+*** OSX
+#+BEGIN_EXAMPLE
+   sed -i '' 's/"\/var";"\/\.\.\/Resources/res";/' lib/Slic3r.pm
+#+END_EXAMPLE
+*** Windows
+    Requires some farting: [[http://sourceforge.net/projects/fart-it/][FART]]
+#+BEGIN_EXAMPLE
+   fart lib\Slic3r.pm "\"/var\";" "\"/res\";"
+#+END_EXAMPLE
+
+** Configure Cava Packager project
+*** Create in ~/build/slic3r-cava/
+*** Add slic3r.pl as main script
+*** Configure the Project Details
+*** Add the resources from var as resources
+*** In the Project Settings add library paths to Perl Interpreter / Extra Module Search Paths
+    Select the correct perl binary and install the Cava-Packager module (Build...)
+
+    Add following additional search paths:
+#+BEGIN_EXAMPLE
+    <slic3r_path>/xs/lib
+    <slic3r_path>/lib
+#+END_EXAMPLE
+    On OSX also add 
+#+BEGIN_EXAMPLE
+     ~/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3/darwin-thread-multi-2level
+     <slic3r_path>/xs/blib/lib
+     ~/perl5/perlbrew/perls/perl-5.16.3/lib/site_perl/5.16.3
+#+END_EXAMPLE
+
+*** Windows
+**** Set slic3r.pl type to GUI
+**** Copy slic3r.pl to slic3r-console.pl and add it
+**** Add <slic3r_path>/xs/blib/arch/auto/Slic3r/XS/XS.dll to shared libraries
+**** Change Project/Build Option/Top Level App Folder
+**** Add Strawberry/c/bin/libglut0_.dll to shared libraries
+*** Linux
+**** Add <slic3r_path>xs/blib/arch/auto/Slic3r/XS/XS.so to shared libraries
+
+** Build the Cava Packager project
+#+BEGIN_EXAMPLE
+cavaconsole -S -B -G -P ~/bin/build/Slic3r/
+#+END_EXAMPLE
+*** Get the Zip file from the installer directory
