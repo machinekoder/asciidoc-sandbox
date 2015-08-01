@@ -103,11 +103,11 @@ Windows: force install IO::Scalar
 #+END_EXAMPLE
 
 ** Configure Cava Packager project
-*** Create in ~/build/slic3r-cava/
-*** Add slic3r.pl as main script
-*** Configure the Project Details
-*** Add the resources from var as resources
-*** In the Project Settings add library paths to Perl Interpreter / Extra Module Search Paths
+- Create in ~/build/slic3r-cava/
+- Add slic3r.pl as main script
+- Configure the Project Details
+- Add the resources from var as resources
+- In the Project Settings add library paths to Perl Interpreter / Extra Module Search Paths
     Select the correct perl binary and install the Cava-Packager module (Build...)
 
     Add following additional search paths:
