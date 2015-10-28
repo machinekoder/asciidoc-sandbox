@@ -1,0 +1,61 @@
+* Parameter service for Machinekit
+
+  This file summarizes my idea for a Machinetalk parameter service.
+
+  The parameter server uses libelektra as basis. Elektra has plugins
+  for various storage formats such as for INI file which are mainly
+  used in Machinekit. Furthermore, elektra allows easy access from
+  Python and writing of 3rd party plugins.
+
+  The idea is to use libelektra to keep backwards compatibility with
+  legacy ini files. Furthermore, elektra allows persistent storage of
+  parameters in various locations which is useful for storing certain
+  parameters in binary files (e.g. to prevent velocity overwriting
+  from users).
+
+  A combination of PUB-SUB and ROUTER-DEALER sockets can be used to
+  implement the parameter server itself. The pattern is similar to
+  haltalk and the launcher service. Proposed service names are =param=
+  and =paramcmd=. In case a client only needs read-only access to
+  parameters, subscription to the =param= service is sufficient. This
+  can also be used intentionally in certain situation where remote
+  manipulation of parameters is not wished.
+
+  Messages are sent in protobuf encoded format. A single ParamKey
+  message should be sufficient to store key, value and type of param
+  key. To improve performance and a =handle= similar to how HAL pins are
+  handled in haltalk may be used. Depending on the type of a parameter
+  exposing the value to the RT environment might be useful or not. In
+  general params are intended to be used for infrequently updated
+  vectors. HAL remote or other Machinetalk service optimized for
+  performance may be preferred depending on the application.
+
+  To update parameters the =paramcmd= service is used. The pattern is
+  simple: We send value and key or handle as well as type for new keys
+  to the param server. The server processes and checks the message and
+  updates elektra accordingly. A value update will be published to the
+  =param= service.
+
+  Integration in HAL can be done either at initialization time using
+  the elektra Python API or with the halelektra user-land HAL
+  component. The halelektra HAL component expects a basekey and
+  component name as parameter. Based on these values it will
+  "subscribe" to a elektra key set. All subkeys of the key set will be
+  exposed to HAL as IO pins. If keys in non HAL compatible format are
+  present in the key set they will be ignored. e.g. a key
+  =user/foo/bar= will be converted to HAL pin with the name =bar= when
+  the base key =user/bar= is supplied to the halelektra
+  component. With this mechanism it should be trivial to persistently
+  store signals and parameters from HAL as well as manipulate them at
+  runtime with a elektra user interface.
+
+  So far only storage databases living on the Machinekit master have
+  been handled. Currently, I completely ignore local configuration
+  files on remote clients. Depending on the use-case of these files it
+  might either be useful to storage data on the Machinekit master or
+  not. I see no useful scenario to store parameters on distributed
+  machines.
+
+** Diagram
+
+   [[file:images/param-server.png][Param Server]]
