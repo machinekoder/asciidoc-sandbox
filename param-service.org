@@ -58,4 +58,4 @@
 
 ** Diagram
 
-   [[file:images/param-server.png][Param Server]]
+   [[./images/param-server.png]]
