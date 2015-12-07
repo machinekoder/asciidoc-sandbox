@@ -1,0 +1,11 @@
+* Machinetalk Sync Protocol
+Proposal for sync protocol for Machinetalk. The purpose this protocol is reliable 
+syncronization between two instances. Currently two services require this type of
+protocol *halrcomp* for syncing state of HAL remote components and *param* for syncing
+key-value pair parameters.
+
+** Networking pattern
+The Machinetalk sync protocol uses 3 channels. The channels are named from the viewpoint of the server/master of the session:
+- *Sync channel:* Based on Machinetalk RPC, is used for state synchronization, exchange of security information and error notification
+- *Pub channel:* Publishes state changes from master to clients
+- *Sub channel:* Publishes state changes from client to master.
